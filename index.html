@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="todoApp">
     <head>
         <title>Loja</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,8 +7,34 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     </head>
     <body>
+
+
+
+      
+      <style>
+
+      
+      </style>
+
+
+
+<script>
+  angular.module('myApp', []).controller('namesCtrl', function ($scope) {
+    $scope.names = [
+      'Full-Stack completo em Java Web',
+      'Carol me Ensina - Inglês',
+      'Método fan art 2.0 Mayra Rodrigues',
+      '5 Linguagens do amor',
+      'Arte da Guerra - Sun Tzu',
+      'Ponto de inflexão',
+    ];
+  });
+</script>
+
+
         <div class="container">
 
             <div class="row">        
@@ -63,18 +89,26 @@
                     <span class="sr-only">Proximo</span>
                   </a>
                 </div>
-        
+                
+                <div ng-controller="worldCtrl">
+                    <input type="text" ng-model="searchItem" size="30" placeholder="Digite o nome do curso">
+                    <input class="btn-primary" type="submit" ng-model="searchText" value="procurar">
+                </div>
+
+
+
                 <div class="row">
         
                   <div class="col-lg-4 col-md-6 mb-4">
                      <!--INICIO PARTE DOS CURSOS-->
+                     
                     <h1>Cursos</h1>
                     <div class="card h-100" style="box-shadow: 2px 2px 5px black;">
                       <a href="#"><img class="card-img-top" src="https://i.imgur.com/nXC3no1.jpg" alt=""></a>
                       <div class="card-body">
 
                         <h4 class="card-title">
-                          <a target="_blank" href="#">Full-Stack completo em Java Web
+                          <a target="_blank" href="#" ng-repeat="x in names | filter:searchText">Full-Stack completo em Java Web
                             </a>
                         </h4>
                         <p class="card-text">Aprenda Java web do básico ao avançado
@@ -91,6 +125,7 @@
                       </div>
                     </div>
                   </div>
+                  { { x } }
         
                   <div class="col-lg-4 col-md-6 mb-4">
                     <h1 style="visibility: hidden">Cursos</h1>
@@ -98,7 +133,7 @@
                       <a href="#"><img class="card-img-top" src="https://imgur.com/UtYLa0G.png" alt=""></a>
                       <div class="card-body">
                         <h4 class="card-title">
-                          <a href="#">Carol me Ensina - Inglês</a>
+                          <a href="#" ng-repeat="x in names | filter:searchText">Carol me Ensina - Inglês</a>
                         </h4>
                         <p class="card-text">Aprenda inglês com a sua Youtuber favorita 
                                             com uma metodologia nova e inédita criada para 
@@ -122,7 +157,7 @@
                       <a href="#"><img class="card-img-top" src="https://imgur.com/LsjnOXR.png" alt=""></a>
                       <div class="card-body">
                         <h4 class="card-title">
-                          <a href="#">Método fan art 2.0 Mayra Rodrigues</a>
+                          <a href="#" ng-repeat="x in names | filter:searchText"></a>>Método fan art 2.0 Mayra Rodrigues</a>
                         </h4>
                         <p class="card-text">Aprenda a desenhar oque você quiser, mesmo que você não tenha 
                           nascido com o <b>dom de desenhar"</b>. Com um método ÚNICO e SIMPLES 
@@ -146,7 +181,7 @@
                       <a href="#"><img class="card-img-top" src="https://imgur.com/iRZU35d.png" alt=""></a>
                       <div class="card-body">
                         <h4 class="card-title">
-                          <a href="#">5 Linguagens do amor</a>
+                          <a href="#" ng-repeat="x in names | filter:searchText">5 Linguagens do amor</a>
                         </h4>
                         <p class="card-text">As cinco linguagens do Amor é um livro de psicologia escrito 
                                               pelo pastor Batista Gary Chapman, que explica as cinco
@@ -169,7 +204,7 @@
                       <a href="#"><img class="card-img-top" src="https://imgur.com/qUFFjli.png" alt=""></a>
                       <div class="card-body">
                         <h4 class="card-title">
-                          <a href="#">Arte da Guerra - Sun Tzu</a>
+                          <a href="#" ng-repeat="x in names | filter:searchText">Arte da Guerra - Sun Tzu</a>
                         </h4>
                         <p class="card-text">A Arte da Guerra é um dos livros clássicos da cultura 
                                              oriental e transcendeu a categoria de simples tratado de 
@@ -193,7 +228,7 @@
                       <a href="#"><img class="card-img-top" src="https://imgur.com/80RI5ey.png" alt=""></a>
                       <div class="card-body">
                         <h4 class="card-title">
-                          <a href="#">Ponto de inflexão</a>
+                          <a href="#" ng-repeat="x in names | filter:searchText">Ponto de inflexão</a>
                         </h4>
                         <p class="card-text"> O ponto de inflexão “Pule ou cale-se para sempre.“ o autor vai dispensar o aprofundamento nas equações que geram
                                               um Ponto de Inflexão, e vai apenas se apropriar deste conceito para descrever momentos 
