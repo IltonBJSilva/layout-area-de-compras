@@ -1,262 +1,195 @@
 <!DOCTYPE html>
-<html ng-app="todoApp">
-    <head>
-        <title>Loja</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
-    </head>
-    <body>
+<html>
+
+<head>
+  <title>Loja</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-9">
+        <style>
 
 
-
-      
-      <style>
-
-      
-      </style>
-
-
-
-<script>
-  angular.module('myApp', []).controller('namesCtrl', function ($scope) {
-    $scope.names = [
-      'Full-Stack completo em Java Web',
-      'Carol me Ensina - Inglês',
-      'Método fan art 2.0 Mayra Rodrigues',
-      '5 Linguagens do amor',
-      'Arte da Guerra - Sun Tzu',
-      'Ponto de inflexão',
-    ];
-  });
-</script>
-
-
-        <div class="container">
-
-            <div class="row">        
-              <div class="col-lg-9">
-                <style>
-                  #tilCar{
-                    background-color: #5c5ce2;
-                    color:whitesmoke;
-                    padding-top: 1%;
-                    padding-bottom: 1%;
-                    padding-left: 1px;
-                    width: 40%;
-                    text-shadow: 2px 2px 5px black;
-                    box-shadow: 2px 2px 5px black;
-                    -webkit-animation-name: example;
-                    -webkit-animation-duration: 4s; 
-                    animation-name: example;
-                    animation-duration: 4s; 
-                  }
-                  @keyframes example {
-                    from {background-color: #5c5ce2;}
-                    to {background-color: #3636c7;}
-                  }
-                </style>
-                <h1 id="tilCar">Mais vendidos</h1>
-                <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-                  <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                  </ol>
-                  <div class="carousel-inner" role="listbox" style="box-shadow: 2px 2px 5px black;">
-                    <div class="carousel-item active">
-                      <!-- Metodo fan art -->
-                      <img class="d-block img-fluid" src="https://imgur.com/nUADylp.png" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                      <!-- Arte da guerra -->
-                      <img class="d-block img-fluid" src="https://imgur.com/3xoXmDe.png" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <!-- Carol Ensina inglês -->
-                      <img class="d-block img-fluid" src="https://imgur.com/I2YhvCI.png" alt="Third slide">
-                    </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Antes</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Proximo</span>
-                  </a>
-                </div>
-                
-                <div ng-controller="worldCtrl">
-                    <input type="text" ng-model="searchItem" size="30" placeholder="Digite o nome do curso">
-                    <input class="btn-primary" type="submit" ng-model="searchText" value="procurar">
-                </div>
-
-
-
-                <div class="row">
-        
-                  <div class="col-lg-4 col-md-6 mb-4">
-                     <!--INICIO PARTE DOS CURSOS-->
-                     
-                    <h1>Cursos</h1>
-                    <div class="card h-100" style="box-shadow: 2px 2px 5px black;">
-                      <a href="#"><img class="card-img-top" src="https://i.imgur.com/nXC3no1.jpg" alt=""></a>
-                      <div class="card-body">
-
-                        <h4 class="card-title">
-                          <a target="_blank" href="#" ng-repeat="x in names | filter:searchText">Full-Stack completo em Java Web
-                            </a>
-                        </h4>
-                        <p class="card-text">Aprenda Java web do básico ao avançado
-                                             de forma rápida e prática sem enrolação
-                                             e comesse a trabalhar ganhando seu próprio 
-                                             dinheiro
-                        </p>
-                        <form target="_blank" action="http://bit.ly/CursoJavaFULLSTACK">
-                          <input target="_blank" class="btn btn-success" type="submit" value="Compre agora" />
-                      </form>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                      </div>
-                    </div>
-                  </div>
-                  { { x } }
-        
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <h1 style="visibility: hidden">Cursos</h1>
-                    <div class="card h-100" style="box-shadow: 2px 2px 5px black;">
-                      <a href="#"><img class="card-img-top" src="https://imgur.com/UtYLa0G.png" alt=""></a>
-                      <div class="card-body">
-                        <h4 class="card-title">
-                          <a href="#" ng-repeat="x in names | filter:searchText">Carol me Ensina - Inglês</a>
-                        </h4>
-                        <p class="card-text">Aprenda inglês com a sua Youtuber favorita 
-                                            com uma metodologia nova e inédita criada para 
-                                            atender os desafios reais de falar inglês fora do Brasil
-                                            e descubra o real motivo dos brasileiros não aprender inglês.
-                        </p>
-
-                        <form target="_blank" action="http://bit.ly/MeEnsinaIngles">
-                          <input target="_blank" class="btn btn-success" type="submit" value="Compre agora" />
-                      </form>
-                    </div>
-                      <div class="card-footer">
-                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                      </div>
-                    </div>
-                  </div>
-        
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <h1 style="visibility: hidden">Cursos</h1>
-                    <div class="card h-100" style="box-shadow: 2px 2px 5px black;">
-                      <a href="#"><img class="card-img-top" src="https://imgur.com/LsjnOXR.png" alt=""></a>
-                      <div class="card-body">
-                        <h4 class="card-title">
-                          <a href="#" ng-repeat="x in names | filter:searchText"></a>>Método fan art 2.0 Mayra Rodrigues</a>
-                        </h4>
-                        <p class="card-text">Aprenda a desenhar oque você quiser, mesmo que você não tenha 
-                          nascido com o <b>dom de desenhar"</b>. Com um método ÚNICO e SIMPLES 
-                          que funciona para todas as idades.
-                          </p>
-                        <form target="_blank" action="http://bit.ly/metodo-fan-art-MayRod">
-                              <input target="_blank" class="btn btn-success" type="submit" value="Compre agora" />
-                        </form>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!--INICIO PARTE DOS LIVROS-->
-                  <div class="col-lg-4 col-md-6 mb-4">
-                      <br><br>  
-                    <h1>Livros</h1>
-                    <div class="card h-100" style="box-shadow: 2px 2px 5px black;">
-                      <a href="#"><img class="card-img-top" src="https://imgur.com/iRZU35d.png" alt=""></a>
-                      <div class="card-body">
-                        <h4 class="card-title">
-                          <a href="#" ng-repeat="x in names | filter:searchText">5 Linguagens do amor</a>
-                        </h4>
-                        <p class="card-text">As cinco linguagens do Amor é um livro de psicologia escrito 
-                                              pelo pastor Batista Gary Chapman, que explica as cinco
-                                              maneiras de expressar e experimentar o amor com o parceiro.
-                        </p>
-                        <form target="_blank" action="https://amzn.to/38Ih2eG">
-                          <input target="_blank" class="btn btn-success" type="submit" value="Compre agora" />
-                        </form>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                      </div>
-                    </div>
-                  </div>
-        
-                  <div class="col-lg-4 col-md-6 mb-4">
-                        <br><br>  
-                        <h1 style="visibility: hidden;">Livros</h1>
-                    <div class="card h-100" style="box-shadow: 2px 2px 5px black;">
-                      <a href="#"><img class="card-img-top" src="https://imgur.com/qUFFjli.png" alt=""></a>
-                      <div class="card-body">
-                        <h4 class="card-title">
-                          <a href="#" ng-repeat="x in names | filter:searchText">Arte da Guerra - Sun Tzu</a>
-                        </h4>
-                        <p class="card-text">A Arte da Guerra é um dos livros clássicos da cultura 
-                                             oriental e transcendeu a categoria de simples tratado de 
-                                             guerra para se transformar numa leitura universal sobre planejamento
-                                             e liderança.
-                        </p>
-                        <form target="_blank" action="https://amzn.to/34ntRHJ">
-                          <input target="_blank" class="btn btn-success" type="submit" value="Compre agora" />
-                        </form>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                      </div>
-                    </div>
-                  </div>
-        
-                  <div class="col-lg-4 col-md-6 mb-2">
-                        <br><br>  
-                        <h1 style="visibility: hidden;">Livros</h1>
-                    <div class="card h-100" style="box-shadow: 2px 2px 5px black;">
-                      <a href="#"><img class="card-img-top" src="https://imgur.com/80RI5ey.png" alt=""></a>
-                      <div class="card-body">
-                        <h4 class="card-title">
-                          <a href="#" ng-repeat="x in names | filter:searchText">Ponto de inflexão</a>
-                        </h4>
-                        <p class="card-text"> O ponto de inflexão “Pule ou cale-se para sempre.“ o autor vai dispensar o aprofundamento nas equações que geram
-                                              um Ponto de Inflexão, e vai apenas se apropriar deste conceito para descrever momentos 
-                                              de nossa vida em que nossas decisões vão determinar para que direção seguiremos.</p>
-                        <form target="_blank" action="https://amzn.to/2M2Tdoe">
-                          <input target="_blank" class="btn btn-success" type="submit" value="Compre agora" />
-                        </form>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                      </div>
-                    </div>
-                  </div>
-        
-                </div>
-                <!-- /.row -->
-        
-              </div>
-              <!-- /.col-lg-9 -->
-        
+        </style>
+        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox" style="box-shadow: 2px 2px 5px black;">
+            <div class="carousel-item active">
+              <!-- Metodo fan art -->
+              <img class="d-block img-fluid" src="https://imgur.com/nUADylp.png" alt="First slide">
             </div>
-            <!-- /.row -->
-        
+            <div class="carousel-item">
+              <!-- Arte da guerra -->
+              <img class="d-block img-fluid" src="https://imgur.com/3xoXmDe.png" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+
+              <!-- Carol Ensina inglês -->
+              <img class="d-block img-fluid" src="https://imgur.com/I2YhvCI.png" href="#http://bit.ly/MeEnsinaIngles"
+                alt="Third slide">
+            </div>
           </div>
-          <!-- /.container -->
-        
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Antes</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Proximo</span>
+          </a>
+        </div>
 
-          </footer>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <!--INICIO PARTE DOS CURSOS-->
+            <h1 style="visibility: hidden">Cursos</h1>
+            <div class="card h-100" style="box-shadow: 2px 2px 5px black;">
+              <a href="#"><img class="card-img-top" src="https://i.imgur.com/nXC3no1.jpg" alt=""></a>
+              <div class="card-body">
 
-    </body>
+                <h4 class="card-title">
+                  <a target="_blank" href="#">Full-Stack completo em Java Web
+                  </a>
+                </h4>
+                <p class="card-text">Aprenda Java web do básico ao avançado
+                  de forma rápida e prática sem enrolação
+                  e comesse a trabalhar ganhando seu próprio
+                  dinheiro
+                </p>
+                <form target="_blank" action="http://bit.ly/CursoJavaFULLSTACK">
+                  <input target="_blank" class="btn btn-success" type="submit" value="Compre agora" />
+                </form>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h1 style="visibility: hidden">Cursos</h1>
+            <div class="card h-100" style="box-shadow: 2px 2px 5px black;">
+              <a href="#"><img class="card-img-top" src="https://imgur.com/UtYLa0G.png" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Carol me Ensina - Inglês</a>
+                </h4>
+                <p class="card-text">Aprenda inglês com a sua Youtuber favorita
+                  com uma metodologia nova e inédita criada para
+                  atender os desafios reais de falar inglês fora do Brasil
+                  e descubra o real motivo dos brasileiros não aprender inglês.
+                </p>
+
+                <form target="_blank" action="http://bit.ly/MeEnsinaIngles">
+                  <input target="_blank" class="btn btn-success" type="submit" value="Compre agora" />
+                </form>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h1 style="visibility: hidden">Cursos</h1>
+            <div class="card h-100" style="box-shadow: 2px 2px 5px black;">
+              <a href="#"><img class="card-img-top" src="https://imgur.com/LsjnOXR.png" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Método fan art 2.0 Mayra Rodrigues</a>
+                </h4>
+                <p class="card-text">Aprenda a desenhar oque você quiser, mesmo que você não tenha
+                  nascido com o <b>dom de desenhar"</b>. Com um método ÚNICO e SIMPLES
+                  que funciona para todas as idades.
+                </p>
+                <form target="_blank" action="http://bit.ly/metodo-fan-art-MayRod">
+                  <input target="_blank" class="btn btn-success" type="submit" value="Compre agora" />
+                </form>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+          <!--INICIO PARTE DOS LIVROS-->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h1 style="visibility: hidden">Cursos</h1>
+            <div class="card h-100" style="box-shadow: 2px 2px 5px black;">
+              <a href="#"><img class="card-img-top" src="https://imgur.com/iRZU35d.png" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+
+                  <a href="#">5 Linguagens do amor</a>
+                </h4>
+                <p class="card-text">As cinco linguagens do Amor é um livro de psicologia que explica<br> 5 linguagens
+                  que todos temos e motivos das brigas dos casais
+                </p>
+                <form target="_blank" action="https://amzn.to/38Ih2eG">
+                  <input target="_blank" class="btn btn-success" type="submit" value="Compre agora" />
+                </form>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+
+            <h1 style="visibility: hidden;">Livros</h1>
+            <div class="card h-100" style="box-shadow: 2px 2px 5px black;">
+              <a href="#"><img class="card-img-top" src="https://imgur.com/qUFFjli.png" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Arte da Guerra - Sun Tzu</a>
+                </h4>
+                <p class="card-text">A Arte da Guerra é um dos livros de liderança e estrategia<br> de muito antigo e
+                  muito usado ainda hoje
+                </p>
+                <form target="_blank" action="https://amzn.to/34ntRHJ">
+                  <input target="_blank" class="btn btn-success" type="submit" value="Compre agora" />
+                </form>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-2">
+            <h1 style="visibility: hidden;">Livros</h1>
+            <div class="card h-100" style="box-shadow: 2px 2px 5px black;">
+              <a href="#"><img class="card-img-top" src="https://imgur.com/80RI5ey.png" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Ponto de inflexão</a>
+                </h4>
+                <p class="card-text">Um dos maiores empresarios do Brasil e dono de um time de futebol</p>
+                <form target="_blank" action="https://amzn.to/2M2Tdoe">
+                  <input target="_blank" class="btn btn-success" type="submit" value="Compre agora" />
+                </form>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </footer>
+</body>
 </html>
