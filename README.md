@@ -9,4 +9,5 @@ Tecnologias utilizadas: Bootstrap | HTML
 Tamanho das imagens pequenas: 700 x 400
 Tamanho das imagens grandes: 900 x 350
 
-Lembrando que isso é so a parte visual que desenvolvi.
+Lembrando que isso e so a parte visual que desenvolvi. <br>
+referencia: [https://docs.angularjs.org/api/ng/filter/filter] 
