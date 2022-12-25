@@ -9,4 +9,5 @@ Tamanho das imagens pequenas: 700 x 400
 Tamanho das imagens grandes: 900 x 350
 
 Lembrando que isso e so a parte visual que desenvolvi.
-[https://docs.angularjs.org/api/ng/filter/filter] referencia
+
+[Ver](https://layout-compra-vercel.vercel.app/)
